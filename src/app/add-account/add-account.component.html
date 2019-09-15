@@ -1,0 +1,203 @@
+<div class="col-md-12 grid-margin stretch-card">
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Add New Account
+          <strong class="pull-right">Account Number: 2019090300001</strong>
+      </h4>
+      <form #addAccountForm="ngForm" (ngSubmit)="saveAccount(addAccountForm.form)" class="forms-sample">
+        <div class="form-group row"> 
+          <div class="col-lg-3">
+            <label for="">Account Holder Name</label>
+          </div>
+          <div class="col-lg-3">
+          <input name="FirstName" class="form-control border-primary" required minlength="4"
+          [(ngModel)]="addAccount.FirstName" placeholder="First Name" #FirstName="ngModel" >
+            <div *ngIf="FirstName.invalid && (FirstName.dirty || FirstName.touched)"
+                class="text-danger">
+              <div *ngIf="FirstName.errors.required">
+                First Name is required.
+              </div>
+              <div *ngIf="FirstName.errors.minlength">
+                First Name must be at least 4 characters long.
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3">
+              <input name="MiddleName" class="form-control border-primary" required minlength="4"
+              [(ngModel)]="addAccount.MiddleName" placeholder="Middle Name" #MiddleName="ngModel" >
+          </div>            
+          <div class="col-lg-3">
+          <input name="LastName" class="form-control border-primary" required minlength="4"
+          [(ngModel)]="addAccount.LastName" placeholder="Last Name" #LastName="ngModel" >
+            <div *ngIf="LastName.invalid && (LastName.dirty || LastName.touched)"
+                class="text-danger">
+              <div *ngIf="LastName.errors.required">
+                Last Name is required.
+              </div>
+              <div *ngIf="LastName.errors.minlength">
+                Last Name must be at least 4 characters long.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group row"> 
+            <div class="col-lg-3">
+              <label for="">Father/Mother/Spouse Name</label>
+            </div>
+            <div class="col-lg-3">
+            <input name="GFName" class="form-control border-primary" required minlength="4"
+            [(ngModel)]="addAccount.GFName" placeholder="First Name" #GFName="ngModel" >
+              <div *ngIf="GFName.invalid && (GFName.dirty || GFName.touched)"
+                  class="text-danger">
+                <div *ngIf="GFName.errors.required">
+                  First Name is required.
+                </div>
+                <div *ngIf="GFName.errors.minlength">
+                  First Name must be at least 4 characters long.
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3">
+                <input name="GMName" class="form-control border-primary" required minlength="4"
+                [(ngModel)]="addAccount.GMName" placeholder="Middle Name" #GMName="ngModel" >
+            </div>            
+            <div class="col-lg-3">
+            <input name="GLName" class="form-control border-primary" required minlength="4"
+            [(ngModel)]="addAccount.GLName" placeholder="Last Name" #GLName="ngModel" >
+              <div *ngIf="GLName.invalid && (GLName.dirty || GLName.touched)"
+                  class="text-danger">
+                <div *ngIf="GLName.errors.required">
+                  Last Name is required.
+                </div>
+                <div *ngIf="GLName.errors.minlength">
+                  Last Name must be at least 4 characters long.
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <div class="form-group row"> 
+            <div class="col-lg-3">
+              <label for="">Nominee Name</label>
+            </div>
+            <div class="col-lg-3">
+            <input name="NomineeFName" class="form-control border-primary" required minlength="4"
+            [(ngModel)]="addAccount.NomineeFName" placeholder="First Name" #NomineeFName="ngModel" >
+              <div *ngIf="NomineeFName.invalid && (NomineeFName.dirty || NomineeFName.touched)"
+                  class="text-danger">
+                <div *ngIf="NomineeFName.errors.required">
+                  First Name is required.
+                </div>
+                <div *ngIf="NomineeFName.errors.minlength">
+                  First Name must be at least 4 characters long.
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3">
+                <input name="NamineeMName" class="form-control border-primary" required minlength="4"
+                [(ngModel)]="addAccount.NamineeMName" placeholder="Middle Name" #NamineeMName="ngModel" >
+            </div>            
+            <div class="col-lg-3">
+            <input name="NomineeLName" class="form-control border-primary" required minlength="4"
+            [(ngModel)]="addAccount.NomineeLName" placeholder="Last Name" #NomineeLName="ngModel" >
+              <div *ngIf="NomineeLName.invalid && (NomineeLName.dirty || NomineeLName.touched)"
+                  class="text-danger">
+                <div *ngIf="NomineeLName.errors.required">
+                  Last Name is required.
+                </div>
+                <div *ngIf="NomineeLName.errors.minlength">
+                  Last Name must be at least 4 characters long.
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-lg-3">
+              <label>Sex</label>
+            </div>
+            <div class="col-lg-3">
+              <select name="Sex" class="form-control border-primary" #Sex="ngModel" [(ngModel)]="addAccount.Sex" required >
+                <option value="" selected="true">Select Sex</option>
+                <option value="1">Male</option>
+                <option value="2">FeMale</option>
+              </select>
+              <div class="text-danger" *ngIf="Sex.invalid && (Sex.dirty || Sex.touched)">
+                <div *ngIf="Sex.errors.required">Please select sex is required.</div>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <label>Date Of Birth</label>
+            </div>
+            <div class="col-lg-3">
+              <div class="input-group">
+                <input class="form-control border-primary" name="DateOfBirth" placeholder="Date Of Birth(yyyy-mm-dd)"
+                #DateOfBirth="ngModel" [(ngModel)]="addAccount.DateOfBirth" required ngbDatepicker #dob="ngbDatepicker">
+                <div class="input-group-append">
+                  <button class="btn border-primary calendar" (click)="dob.toggle()" type="button"></button>
+                </div>
+              </div>
+              <div class="text-danger" *ngIf="DateOfBirth.invalid && (DateOfBirth.dirty || DateOfBirth.touched)">
+                <div *ngIf="DateOfBirth.errors.required">Date of Birth name is required.</div>
+              </div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-lg-3">
+            <label for="exampleInputEmail3">Email address</label>
+          </div>
+          <div class="col-lg-3">
+            <input type="email" placeholder="Email Address" name="EmailId" #EmailId="ngModel" [(ngModel)]="addAccount.EmailId"
+             class="form-control border-primary" >
+            <!-- <div *ngIf="EmailId.invalid && ( EmailId.dirty || EmailId.touched)">
+              <div *ngIf="EmailId.errors.pattern">Please enter valid email address</div>
+            </div> -->
+          </div>
+          <div class="col-lg-3">
+            <label for="exampleInputEmail3">Mobile Number</label>
+          </div>
+          <div class="col-lg-3">
+            <input type="text" name="MobileNo" #MobileNo="ngModel" [(ngModel)]="addAccount.MobileNo" 
+            maxlength="10" minlength="10" required placeholder="Contact Number" class="form-control border-primary">
+            <div class="text-danger" *ngIf="MobileNo.invalid && (MobileNo.dirty || MobileNo.touched)">
+              <div *ngIf="MobileNo.errors.required">Contact Number is required.</div>
+              <div *ngIf="MobileNo.errors.minlength">Mobile number be minimum 10 characters</div>
+              <div *ngIf="MobileNo.errors.maxlength">Mobile number be maximum 10 characters</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-lg-3">
+              <label>Pan Number</label>
+            </div>
+            <div class="col-lg-3">
+              <input name="PanNo" placeholder="Enter Pan Number" #PanNo="ngModel" [(ngModel)]="addAccount.PanNo" required class="form-control border-primary" >
+              <div class="text-danger" *ngIf="PanNo.invalid && (PanNo.dirty || PanNo.touched)">
+                <div *ngIf="PanNo.errors.required">Pan number is required.</div>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <label>Aadhar Number</label>
+            </div>
+            <div class="col-lg-3">
+              <input name="AadharNo" placeholder="Enter Aadhar Number" minlength="12" maxlength="12" #AadharNo="ngModel" [(ngModel)]="addAccount.AadharNo" required class="form-control border-primary" >
+              <div class="text-danger" *ngIf="AadharNo.invalid && (AadharNo.dirty || AadharNo.touched)">
+                <div *ngIf="AadharNo.errors.required">Aadhar number is required.</div>
+                <div *ngIf="AadharNo.errors.minlength">Your Aadhar number should be minimun 12 character</div>
+                <div *ngIf="AadharNo.errors.maxlength">Your Aadhar number should be maximum 12 character</div>
+              </div>
+            </div>
+        </div>
+          <strong>Permanent Address</strong>
+          <app-add-address></app-add-address>
+            <strong>Office Address</strong>
+            <app-add-address></app-add-address>
+        <button type="submit" class="btn btn-success mr-2" [disabled]="addAccountForm.form.invalid" >Submit</button>
+        <button class="btn btn-light" routerLink="/account-list" >Cancel</button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,127 @@
+
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title">
+      All Account List
+      <button class="btn btn-info pull-right" routerLink="/add-account" ><i class="fa fa-plus"></i>Account</button>
+    </h4>
+    <div class="row">
+      <div class="col-lg-3 form-group">
+        <input type="text" placeholder="Search" class="form-control border-primary">
+      </div>
+      <div class="col-lg-3">
+        <select type="text" placeholder="To date" class="form-control border-primary">
+          <option value="">Select Account Type</option>
+          <option>Saving</option>
+          <option>Current</option>
+          <option>Joint</option>
+          <option>Loan</option>
+        </select>
+      </div>
+      <div class="col-lg-3">
+        <div class="input-group">
+          <input class="form-control border-primary" placeholder="From Date(yyyy-mm-dd)"
+                  name="dp" ngbDatepicker #fromdate="ngbDatepicker">
+          <div class="input-group-append">
+            <button class="btn border-primary calendar" (click)="fromdate.toggle()" type="button"></button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="input-group">
+          <input class="form-control border-primary" placeholder="To Date(yyyy-mm-dd)"
+                  name="dp" ngbDatepicker #todate="ngbDatepicker">
+          <div class="input-group-append">
+            <button class="btn border-primary calendar" (click)="todate.toggle()" type="button"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-primary pull-right"><i class="fa fa-search"></i>Search</button>
+    <div class="table-responsive">
+      <table class="table table-stripped">
+        <thead>
+          <tr>
+            <th>Acct Number</th>
+            <th>Name</th>
+            <th>Balance</th>
+            <th>Contact</th>
+            <th>Opening Date</th>
+            <th>Account Type</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>123801529589</td>
+            <td>Jitendra Dubey</td>
+            <td><i class="fa fa-inr"> </i> 28900</td>
+            <td>9029451159</td>
+            <td>12th June 2010</td>
+            <td>Saving</td>
+            <td>
+                <div aria-label="Basic example" class="btn-group" role="group">
+                  <button class="btn btn-info btn-xs icon-btn" title="Edit" type="button"><i class="fa fa-edit"></i></button>
+                  <button class="btn btn-success btn-xs icon-btn" title="Activate" type="button"><i class="fa fa-check"></i></button>
+                  <button class="btn btn-danger btn-xs icon-btn" title="DeActivate" type="button"><i class="fa fa-times-rectangle"></i></button>
+                  <button class="btn btn-warning btn-xs" title="Upload KYC" type="button" routerLink="/upload-kyc" ><i class="mdi mdi-cloud-download"></i></button>
+                  <button class="btn btn-info btn-xs" title="Print details" type="button"><i class="mdi mdi-printer"></i></button>
+                </div>
+            </td>
+          </tr>
+          <tr>
+              <td>123801529589</td>
+              <td>Ajay Yadav</td>
+              <td><i class="fa fa-inr"> </i> 45879</td>
+              <td>9029451159</td>
+              <td>12th June 2010</td>
+              <td>Saving</td>
+              <td>
+                  <div aria-label="Basic example" class="btn-group" role="group">
+                    <button class="btn btn-info btn-xs icon-btn" title="Edit" type="button"><i class="fa fa-edit"></i></button>
+                    <button class="btn btn-success btn-xs icon-btn" title="Activate" type="button"><i class="fa fa-check"></i></button>
+                    <button class="btn btn-danger btn-xs icon-btn" title="DeActivate" type="button"><i class="fa fa-times-rectangle"></i></button>
+                    <button class="btn btn-warning btn-xs" title="Upload KYC" type="button" routerLink="/upload-kyc"  ><i class="mdi mdi-cloud-download"></i></button>
+                    <button class="btn btn-info btn-xs" title="Print details" type="button"><i class="mdi mdi-printer"></i></button>
+                  </div>
+              </td>
+            </tr>
+            <tr>
+              <td>123801529589</td>
+              <td>Gowtham Goli</td>
+              <td><i class="fa fa-inr"> </i> 29900</td>
+              <td>9029451159</td>
+              <td>12th June 2010</td>
+              <td>Saving</td>
+              <td>
+                  <div aria-label="Basic example" class="btn-group" role="group">
+                    <button class="btn btn-info btn-xs icon-btn" title="Edit" type="button"><i class="fa fa-edit"></i></button>
+                    <button class="btn btn-success btn-xs icon-btn" title="Activate" type="button"><i class="fa fa-check"></i></button>
+                    <button class="btn btn-danger btn-xs icon-btn" title="DeActivate" type="button"><i class="fa fa-times-rectangle"></i></button>
+                    <button class="btn btn-warning btn-xs" title="Upload KYC" type="button" routerLink="/upload-kyc" ><i class="mdi mdi-cloud-download"></i></button>
+                    <button class="btn btn-info btn-xs" title="Print details" type="button"><i class="mdi mdi-printer"></i></button>
+                  </div>
+              </td>
+            </tr>
+            <tr>
+              <td>123801529589</td>
+              <td>Sandeep Gupta</td>
+              <td><i class="fa fa-inr"> </i> 30900</td>
+              <td>9029451159</td>
+              <td>12th June 2010</td>
+              <td>Saving</td>
+              <td>
+                  <div aria-label="Basic example" class="btn-group" role="group">
+                    <button class="btn btn-info btn-xs icon-btn" title="Edit" type="button"><i class="fa fa-edit"></i></button>
+                    <button class="btn btn-success btn-xs icon-btn" title="Activate" type="button"><i class="fa fa-check"></i></button>
+                    <button class="btn btn-danger btn-xs icon-btn" title="DeActivate" type="button"><i class="fa fa-times-rectangle"></i></button>
+                    <button class="btn btn-warning btn-xs" title="Upload KYC" type="button" routerLink="/upload-kyc" ><i class="mdi mdi-cloud-download"></i></button>
+                    <button class="btn btn-info btn-xs" title="Print details" type="button"><i class="mdi mdi-printer"></i></button>
+                  </div>
+              </td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

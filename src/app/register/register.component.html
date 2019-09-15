@@ -1,0 +1,102 @@
+
+<div class="col-md-12 grid-margin stretch-card">
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title"><i class="fa fa-plus"> </i> Add New Agent
+      <strong class="pull-right">Agent Code: AGENT0215854</strong>
+      </h4>
+      <form #addAgentForm="ngForm" class="forms-sample">
+        <div class="row">
+          <div class="col-lg-2 form-group">
+              <label for="exampleInputName1">First Name</label>
+          </div>
+          <div class="col-lg-4 form-group">
+              <input type="text" class="form-control border-primary" name="FirstName" #FirstName="ngModel" 
+              [(ngModel)]="addAgent.FirstName" placeholder="First Name" required>
+              <div class="text-danger" *ngIf="FirstName.invalid && (FirstName.touched || FirstName.dirty)" >
+                <div *ngIf="FirstName.errors.required">Please enter First Name.</div>
+              </div>
+          </div>
+          <div class="col-lg-2 form-group">
+              <label for="exampleInputName1">Last Name</label>
+          </div>
+          <div class="col-lg-4 form-group">
+              <input type="text" class="form-control border-primary" name="LastName" #LastName="ngModel" 
+              [(ngModel)]="addAgent.LastName" placeholder="Last Name" required>
+              <div class="text-danger" *ngIf="LastName.invalid && (LastName.touched || LastName.dirty)">
+                <div *ngIf="LastName.errors.required">Please enter Last Name.</div>
+              </div>
+          </div>
+          <div class="col-lg-2 form-group">
+              <label for="exampleInputEmail3">Email address</label>
+          </div>
+          <div class="col-lg-4 form-group">
+              <input type="email" class="form-control border-primary" name="EmailId" #EmailId="ngModel" [(ngModel)]="addAgent.EmailId" placeholder="Email Address">
+          </div>
+          <div class="col-lg-2 form-group">
+              <label for="exampleInputName1">Mobile No</label>
+          </div>
+          <div class="col-lg-4 form-group">
+              <input type="text" class="form-control border-primary" name="MobileNo" #MobileNo="ngModel" [(ngModel)]="addAgent.MobileNo"
+               placeholder="Contact Number" required minlength="10" maxlength="10" >
+               <div class="text-danger" *ngIf="MobileNo.invalid && (MobileNo.touched || MobileNo.dirty)">
+                 <div *ngIf="MobileNo.errors.required">Please enter your mobile number.</div>
+                 <div *ngIf="MobileNo.errors.minlength">Mobile number should be 10 characters.</div>
+               </div>
+          </div>
+          <div class="col-lg-2 form-group">
+              <label for="exampleInputEmail3">Password</label>
+          </div>
+          <div class="col-lg-4">
+              <input type="password" class="form-control border-primary" name="Password" #Password="ngModel" [(ngModel)]="addAgent.Password"
+              required placeholder="Password">
+              <div class="text-danger" *ngIf="Password.invalid && (Password.touched || Password.dirty)">
+                <div *ngIf="Password.errors.required">Please enter your password.</div>
+              </div>
+          </div>
+          <div class="col-lg-2 form-group">
+              <label for="exampleInputEmail3">Confirm Password</label>
+          </div>
+          <div class="col-lg-4 form-group">
+              <input type="password" class="form-control border-primary" name="ConfirmPassword" #ConfirmPassword="ngModel" 
+              required [(ngModel)]="addAgent.ConfirmPassword" placeholder="Confirm Password">
+              <div class="text-danger" *ngIf="ConfirmPassword.invalid && (ConfirmPassword.dirty || ConfirmPassword.touched)" >
+                <div *ngIf="ConfirmPassword.errors.required">Please enter confirm password.</div>
+                <div *ngIf="addAgent.ConfirmPassword != addAgent.Password">Confirm password not matched</div>
+              </div>
+          </div>
+          <div class="col-lg-2 form-group">
+              <label for="exampleInputEmail3">Address</label>
+          </div>
+          <div class="col-lg-10 form-group">
+              <textarea class="form-control border-primary" id="exampleInputEmail3" placeholder="Address"></textarea>
+          </div>
+          <div class="col-lg-2 form-group">
+            <label>Aadhar Number</label>
+          </div>
+          <div class="col-lg-4 form-group">
+            <input type="number" name="AadharNo" #AadharNo="ngModel" [(ngModel)]="addAgent.AadharNo" required
+            minlength="12" maxlength="12" class="form-control border-primary">
+            <div class="text-danger" *ngIf="AadharNo.invalid && (AadharNo.dirty || AadharNo.touched)" >
+                <div *ngIf="AadharNo.errors.minlength">Aadhar number must be 12 character</div>
+                <div *ngIf="AadharNo.errors.maxlength">Aadhar number must be 12 character</div>
+            </div>
+          </div>
+          <div class="col-lg-2 form-group">
+              <label>Pan Number</label>
+            </div>
+            <div class="col-lg-4 form-group">
+              <input type="text" name="PanNo" #PanNo="ngModel" [(ngModel)]="addAgent.PanNo" required
+              minlength="11" maxlength="11" class="form-control border-primary">
+              <div class="text-danger" *ngIf="PanNo.invalid && (PanNo.dirty || PanNo.touched)" >
+                  <div *ngIf="PanNo.errors.minlength">Aadhar number must be 11 character</div>
+                  <div *ngIf="PanNo.errors.maxlength">Aadhar number must be 11 character</div>
+              </div>
+            </div>
+        </div>
+        <button class="btn btn-light pull-right">Cancel</button>
+        <button type="submit" class="btn btn-success mr-2 pull-right">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
